@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{9F282B1A-7928-D065-87DB-1C2E47C252A9}") = "TangoDefender", "Assembly-CSharp.csproj", "{2C7AFDAC-D3BA-8730-0B79-AC94CF0A01F0}"
+EndProject
+Project("{9F282B1A-7928-D065-87DB-1C2E47C252A9}") = "TangoDefender", "Assembly-CSharp-Editor.csproj", "{018075BA-E3E5-C410-2D84-95F90D11F64C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C7AFDAC-D3BA-8730-0B79-AC94CF0A01F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C7AFDAC-D3BA-8730-0B79-AC94CF0A01F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C7AFDAC-D3BA-8730-0B79-AC94CF0A01F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C7AFDAC-D3BA-8730-0B79-AC94CF0A01F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018075BA-E3E5-C410-2D84-95F90D11F64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018075BA-E3E5-C410-2D84-95F90D11F64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018075BA-E3E5-C410-2D84-95F90D11F64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018075BA-E3E5-C410-2D84-95F90D11F64C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

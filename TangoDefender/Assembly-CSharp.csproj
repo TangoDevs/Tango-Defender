@@ -49,11 +49,13 @@
      <Compile Include="Assets\Google-Unity\Scripts\AndroidLifecycle.cs" />
      <Compile Include="Assets\Movie.cs" />
      <Compile Include="Assets\MoviePlayer\Scripts\MobileMoviePlayer.cs" />
+     <Compile Include="Assets\Scripts\Castle.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\Heap.cs" />
      <Compile Include="Assets\Scripts\Node.cs" />
      <Compile Include="Assets\Scripts\PathFinding.cs" />
      <Compile Include="Assets\Scripts\PathRequestManager.cs" />
+     <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
      <Compile Include="Assets\TangoPrefabs\Scripts\ARCameraPostProcess.cs" />
      <Compile Include="Assets\TangoPrefabs\Scripts\TangoARPoseController.cs" />

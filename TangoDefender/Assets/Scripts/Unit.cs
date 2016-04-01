@@ -8,6 +8,7 @@ public class Unit : MonoBehaviour {
 	public float speed ;
 	Vector3[] path;
 	int targetIndex;
+	Vector3 pos;
 
     void Start()
     {
@@ -50,7 +51,11 @@ public class Unit : MonoBehaviour {
 		}
 
 	void OnTriggerEnter(Collider col){
-		
+		if (col.gameObject.tag == "Changing") {
+			pos = col.gameObject.transform.eulerAngles;
+			gameObject.transform.eulerAngles = new Vector3 (0, pos.y, 0);
+
+		}
 	}
 }
 

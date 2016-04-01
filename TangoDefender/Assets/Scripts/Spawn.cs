@@ -24,9 +24,11 @@ public class Spawn : MonoBehaviour {
 			{
 				float spawnx=Random.Range (-1, 1);
 				if (spawnx < 0) {
-					spawnValues.x = -0.424f;
+					spawnValues.x = -0.4272f;
+					spawnValues.z =	-0.5043f;
 				} else {
-					spawnValues.x = 0.44f;
+					spawnValues.x = 0.4249f;
+					spawnValues.z =	-0.4651f;
 				}
 				Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = Quaternion.identity;

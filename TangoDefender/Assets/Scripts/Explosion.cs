@@ -21,16 +21,26 @@ public class Explosion : MonoBehaviour {
 	}
 
 
-	public void OnCollisionEnter(Collision collision) {
-		
-		if (explosionParticlesPrefab)
-		{
-			GameObject explosion = (GameObject)Instantiate(explosionParticlesPrefab, transform.position, explosionParticlesPrefab.transform.rotation);
-			Destroy(explosion, explosion.GetComponent<ParticleSystem>().startLifetime);
-		}
-		if (collision.gameObject.GetComponentInChildren<PlayerHealth> ()) {
-			collision.gameObject.GetComponentInChildren<PlayerHealth>().Decrease();
-		}
-		Destroy(gameObject);
-	}
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.GetComponent<PlayerHealth>())
+        {
+            col.gameObject.GetComponent<PlayerHealth>().Decrease();
+        }
+
+        if (explosionParticlesPrefab)
+        {
+            GameObject explosion = (GameObject)Instantiate(explosionParticlesPrefab, transform.position, explosionParticlesPrefab.transform.rotation);
+            Destroy(explosion, explosion.GetComponent<ParticleSystem>().startLifetime);
+        }
+
+        StartCoroutine(dise());
+    }
+    IEnumerator dise()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        yield return null;
+
+    }
 }

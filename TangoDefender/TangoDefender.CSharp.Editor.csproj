@@ -96,23 +96,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\FacebookBuild.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\FacebookConsoleEndpoint.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\FacebookPostprocess.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\FacebookSettingsEditor.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\Utility.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\android\FacebookAndroidUtil.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\android\ManifestMod.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\iOS\FixupFiles.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\iOS\PListDict.cs" />
-    <Compile Include="Assets\FacebookSDK\SDK\Editor\iOS\PListParser.cs" />
     <Compile Include="Assets\TangoSDK\Editor\TangoInspector.cs" />
     <Compile Include="Assets\TangoSDK\Editor\TangoMenu.cs" />
     <Compile Include="Assets\TangoSDK\Editor\TangoSDKAbout.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\FacebookSDK\SDK\Editor\android\DefaultAndroidManifest.xml" />
-    <None Include="Assets\FacebookSDK\SDK\Scripts\Canvas\Resources\JSSDKBindings.txt" />
     <None Include="Assets\MoviePlayer\Readme.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\UnityUxHelper\AndroidManifest.xml" />

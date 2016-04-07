@@ -87,6 +87,12 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="SampleClassLibrary">
+      <HintPath>Assets\JsonDotNet\Examples\Tests\TestModels\SampleClassLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>Assets\Plugins\RestSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="TangoDefender.CSharp.csproj">
@@ -101,6 +107,7 @@
     <Compile Include="Assets\TangoSDK\Editor\TangoSDKAbout.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\JsonDotNet\ReadMe.txt" />
     <None Include="Assets\MoviePlayer\Readme.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\UnityUxHelper\AndroidManifest.xml" />
@@ -127,6 +134,7 @@
     <None Include="Assets\Plugins\Android\tango-ux-support-library\res\values\strings.xml" />
     <None Include="Assets\Plugins\Android\tango-ux-support-library\res\values\styles.xml" />
     <None Include="Assets\Plugins\Android\tango_java_lib\AndroidManifest.xml" />
+    <None Include="Assets\README.txt" />
     <None Include="Assets\Shaders\Standard.shader" />
     <None Include="Assets\TangoPrefabs\Shaders\ARPostProcess.shader" />
     <None Include="Assets\TangoPrefabs\Shaders\PointCloud.shader" />

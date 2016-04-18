@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
 	}
 
     public void Decrease() {
-        currHealth -= 50f;
+        currHealth -= 5f;
         float nowHealth = currHealth / maxHealth;
         SetHealthBar(nowHealth);
     }

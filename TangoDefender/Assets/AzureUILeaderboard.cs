@@ -85,6 +85,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Bitrave.Azure;
+using UnityEngine.UI;
 
 public class AzureUILeaderboard : MonoBehaviour 
 {
@@ -98,23 +99,33 @@ public class AzureUILeaderboard : MonoBehaviour
 
 	// Table items
 	public List<Leaderboard> _leaderboardItems = new List<Leaderboard>();
-	
-	// Use this for initialization
-	void Start () 
+
+    public GameObject textlb;
+    public Text text;
+	public string texts;
+
+    // Use this for initialization
+    void Start () 
 	{
         azure = new AzureMobileServices(AzureEndPoint, ApplicationKey);
+        textlb = GameObject.Find("Text");
+        text = textlb.GetComponent<Text>();
+		texts = " ";
+        GetAllItems();
     }
 
 	// Update is called once per frame
 	void Update () 
 	{
-
+		text.text = texts;
 	}
 
 	// Interface
 	private int width = 44;
 	private int height = 44;
 	private int colWidth = 200;
+
+   
 
 	// Item to insert
 	private Leaderboard _leaderboard = new Leaderboard()
@@ -130,63 +141,16 @@ public class AzureUILeaderboard : MonoBehaviour
 		Username = "Anon"
 	};
 
-	private Vector2 scrollPosition;
+	public Vector2 scrollPosition;
 	
-	public void OnGUI()
-    {
-        GUILayout.BeginVertical();        
-        GUILayout.BeginHorizontal();
 
-        // Column 1
-
-		// hide rest of GUI if no connection available
-		GUI.enabled = ( azure != null ); 
-
-		// Column 3
-		GUILayout.BeginVertical(GUILayout.Width(colWidth));
-		
-		if (GUILayout.Button("List All Scores",  GUILayout.MinWidth(width), GUILayout.Height(height) ))
-        {
-            GetAllItems();
-        }
-		
-        scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, true, GUILayout.Height(300));
-        
-		// Column 4
-        GUILayout.BeginVertical();
-        foreach (var item in _leaderboardItems)
-        {
-            GUILayout.BeginHorizontal();
-			GUILayout.Label(item.Username);
-			GUILayout.Label(Convert.ToString(item.Score));
-            GUILayout.EndHorizontal();
-        }
-        GUILayout.EndVertical();
-        
-        GUILayout.EndScrollView();
-        GUILayout.EndVertical();
-
-        //GUILayout.BeginVertical(GUILayout.Width(colWidth));
-
-        //var was = GUI.enabled;
-
-        //GUI.enabled = _selectedItem.Id != null;
-
-
-        //GUI.enabled = was;
-
-        //GUILayout.EndVertical();
-
-        GUILayout.EndHorizontal();
-        GUILayout.EndVertical();
-
-        GUI.enabled = true;
-    }
 
 	public void GetAllItems()
 	{
-		_leaderboardItems.Clear();
+		//_leaderboardItems.Clear();
 		azure.Where<Leaderboard>(p => p.Username != null, ReadHandler);
+
+        
 	}
 	
 	public void ReadHandler(AzureResponse<List<Leaderboard>> response)
@@ -195,12 +159,43 @@ public class AzureUILeaderboard : MonoBehaviour
 		var list = response.ResponseData;
 		
 		Debug.Log("Items ==================");
+		//text.text = "name       score " ;
 		foreach (var item in list)
 		{
+			//Debug.Log("Items ==================");
 			Debug.Log( Convert.ToString(item.Score) + "," + item.Username + "," + item.Id);
-			_leaderboardItems.Add(item);
+			//_leaderboardItems.Add(item);
+			//text.text = " ";
+			texts += item.Username+"\t\t" +Convert.ToString(item.Score)+"\n" ;
+        }
+		Debug.Log("==================");
+	}
+
+	public void GetAllItemsui()
+	{
+		//_leaderboardItems.Clear();
+		azure.Where<Leaderboard>(p => p.Username != null, ReadHandler);
+
+
+	}
+
+	public Leaderboard ReadHandlerui(AzureResponse<List<Leaderboard>> response)
+	{
+	 List<Leaderboard> _leaderboardItemsui = new List<Leaderboard>();
+		var list = response.ResponseData;
+
+		Debug.Log("Items ==================");
+		//text.text = "name       score " ;
+		foreach (var item in list)
+		{
+			//Debug.Log("Items ==================");
+			//Debug.Log( Convert.ToString(item.Score) + "," + item.Username + "," + item.Id);
+			_leaderboardItemsui.Add(item);
+			//text.text = " ";
+			//texts += item.Username+"\t\t" +Convert.ToString(item.Score)+"\n" ;
 		}
 		Debug.Log("==================");
+		return _leaderboardItemsui;
 	}
 
 }

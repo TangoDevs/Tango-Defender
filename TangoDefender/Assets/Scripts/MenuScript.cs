@@ -37,6 +37,16 @@ public class MenuScript : MonoBehaviour {
         "&redirect_uri=" + WWW.EscapeURL(redirectURIParameter));
     }
 
+	public void HighScore()
+	{
+		SceneManager.LoadScene("TestAzure");
+	}
+
+	public void MainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
+
     // Update is called once per frame
     public void QuitGame ()
     {
